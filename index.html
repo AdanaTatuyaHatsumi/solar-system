@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Tata Surya</title>
+  <link rel="stylesheet" href="css/styles3.css">
+</head>
+<body>
+  <header>
+    <h1>Sistem Tata Surya</h1>
+    <p>Jelajahi planet dan objek di tata surya kita!</p>
+  </header>
+  <main>
+    <div id="controls">
+        <button onclick="pauseAnimation()">Pause</button>
+        <button onclick="playAnimation()">Play</button>
+      </div>
+      
+      <div id="zoom-controls">
+        <button onclick="zoomIn()">Zoom In</button>
+        <button onclick="zoomOut()">Zoom Out</button>
+      </div>
+
+      <button id="toggle-mode">Mode Malam</button>
+        
+    <section id="solar-system">
+        <div id="meteors-container"></div>
+
+        <div class="sun">🌞</div>
+
+        <div class="orbit orbit-mercury"></div>
+        <div class="orbit orbit-venus"></div>
+        <div class="orbit orbit-earth"></div>
+        <div class="orbit orbit-mars"></div>
+        <div class="orbit orbit-jupiter"></div>
+
+        <div class="planet mercury" data-info="Mercury: Planet terdekat dari matahari.">
+            <span class="planet-name">Mercury</span>
+        </div>
+        <div class="planet venus" data-info="Venus: Planet kedua dari matahari.">
+            <span class="planet-name">Venus</span>
+        </div>
+        <div class="planet earth" data-info="Earth: Planet tempat kita tinggal.">
+            <span class="planet-name">Earth</span>
+        </div>
+        <div class="planet mars" data-info="Mars: Planet merah.">
+            <span class="planet-name">Mars</span>
+        </div>
+        <div class="planet jupiter" data-info="Jupiter: Planet terbesar.">
+          <span class="planet-name">Jupiter</span>
+      </div>       
+        <!-- Tambahkan planet lainnya -->
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Dibuat oleh Kasirun Alfauzi</p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

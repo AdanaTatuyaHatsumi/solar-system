@@ -1,0 +1,235 @@
+/* Reset dasar */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Header */
+header {
+  padding: 20px;
+  background: linear-gradient(90deg, #141e30, #243b55);
+}
+
+/* Tata Surya */
+#solar-system {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    margin: 50px auto;
+    background: radial-gradient(circle, #111 60%, #000 100%);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  /* Matahari */
+  .sun {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, yellow, orange);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+    box-shadow: 0 0 30px 15px yellow, 0 0 50px 30px orange;
+    animation: pulse 3s infinite;
+  }
+  
+  .planet-name {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
+  
+
+/* Orbit Planet */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .orbit-mercury { width: 172px; height: 172px; }
+  .orbit-venus { width: 252px; height: 252px; }
+  .orbit-earth { width: 352px; height: 352px; }
+  .orbit-mars { width: 492px; height: 492px; }
+  .orbit-jupiter { width: 621px; height: 621px; }
+  
+  .planet {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0; /* Pastikan transform-origin berada di pusat orbit */
+  }
+  
+  /* Set planet dengan posisi tepat di orbit */
+  .planet.mercury {
+    background: gray;
+    animation: orbit-mercury 5s linear infinite;
+    transform: translate(-70px, -50%) translate(70px, 0);
+  }
+  
+  .planet.venus {
+    background: orange;
+    animation: orbit-venus 8s linear infinite;
+    transform: translate(-110px, -50%) translate(110px, 0);
+  }
+  
+  .planet.earth {
+    background: blue;
+    animation: orbit-earth 10s linear infinite;
+    transform: translate(-160px, -50%) translate(160px, 0);
+  }
+  
+  .planet.mars {
+    background: red;
+    animation: orbit-mars 12s linear infinite;
+    transform: translate(-230px, -50%) translate(230px, 0);
+  }
+
+  .planet.jupiter {
+    background: brown;
+    animation: orbit-jupiter 14s linear infinite;
+    transform: translate(-296, -50%) translate(296, 0);
+  }
+  
+  /* Animasi Orbit Planet */
+  @keyframes orbit-mercury {
+    0% { transform: rotate(0deg) translate(70px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(70px) rotate(0deg); }
+  }
+  
+  @keyframes orbit-venus {
+    0% { transform: rotate(0deg) translate(110px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(110px) rotate(0deg); }
+  }
+  
+  @keyframes orbit-earth {
+    0% { transform: rotate(0deg) translate(160px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(160px) rotate(0deg); }
+  }
+  
+  @keyframes orbit-mars {
+    0% { transform: rotate(0deg) translate(230px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(230px) rotate(0deg); }
+  }
+
+  @keyframes orbit-jupiter {
+    0% { transform: rotate(0deg) translateX(296px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(296px) rotate(0deg); }
+  }
+  
+  #meteors-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Supaya tidak mengganggu klik elemen lainnya */
+  }
+  
+  .meteor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    animation: meteor-shower 2s linear infinite;
+    z-index: 1;
+  }
+  
+  /* Efek jatuh untuk meteor */
+  @keyframes meteor-shower {
+    0% {
+      transform: translate(-50px, -50px) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(500px, 500px) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+  .meteor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                0 0 50px rgba(255, 255, 255, 0.5),
+                -10px -10px 30px rgba(255, 255, 255, 0.3); /* Jejak cahaya */
+    animation: meteor-shower 2s linear infinite;
+  }  
+  
+  
+  #controls {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+
+  .sun {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px yellow, 0 0 40px orange, 0 0 60px red;
+    }
+    50% {
+      box-shadow: 0 0 30px yellow, 0 0 50px orange, 0 0 70px red;
+    }
+  }
+  
+  body.day {
+    background: radial-gradient(circle, #87CEEB, #0000FF); /* Langit siang */
+    color: black;
+  }
+  
+  body.night {
+    background: radial-gradient(circle, #000, #111); /* Langit malam */
+    color: white;
+  }
+  
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  padding: 10px;
+  background: #141e30;
+  font-size: 12px;
+}
